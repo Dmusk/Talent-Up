@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+import env from "dotenv";
 
-mongoose.connect(
-  "mongodb+srv://Dadu:DaduMDB%402003@cluster0.mzwtfbm.mongodb.net/Udemy"
-);
+env.config();
+
+mongoose.connect(process.env.MONGODB_URL);
 
 const userSchema = new mongoose.Schema({
   username: String,
